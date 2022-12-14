@@ -687,6 +687,7 @@ declare module 'ccxt' {
         | 'upbit'
         | 'wavesexchange'
         | 'wazirx'
+        | 'cspro_dcx'
         | 'whitebit'
         | 'woo'
         | 'yobit'

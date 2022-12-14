@@ -492,6 +492,8 @@ class Exchange(object):
                 _self is a reference to self created by function.__get__(exchange, type(exchange))
                 https://en.wikipedia.org/wiki/Closure_(computer_programming) equivalent to functools.partial
                 """
+                if hasattr(self, 'request_params'):
+                    params = self.extend(params, getattr(self, 'request_params'))
                 inner_kwargs = dict(outer_kwargs)  # avoid mutation
                 if params is not None:
                     inner_kwargs['params'] = params
